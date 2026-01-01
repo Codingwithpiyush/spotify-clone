@@ -1,14 +1,16 @@
 body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     font-family: "Roboto Slab", serif;
-    margin:0;
     background-color: #000;
     color: white;
-    overflow: hidden;
 }
 .main{
     display: flex;
     height:100vh;
-    width: 1590px;
+    width: 100%;
+    max-width: 1200px;
 }
 .sidebar{
     width: 340px;
@@ -266,12 +268,48 @@ space{
   background-color: rgba(29, 185, 84, 0.1);
 }
 
+/* ================= MOBILE VIEW FIX ================= */
 @media (max-width: 768px) {
+
+  /* Hide left sidebar */
+  .left,
   .sidebar {
     display: none;
   }
 
+  /* Make main content full width */
+  .right,
+  .main-content {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  /* Player bar at bottom */
+  .playbar,
   .player {
     width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+  }
+
+  /* Song cards grid */
+  .songList,
+  .song-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Text readable */
+  body {
+    font-size: 14px;
+  }
+
+  /* Buttons touch friendly */
+  button {
+    min-height: 44px;
   }
 }
+
