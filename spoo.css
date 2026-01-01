@@ -265,3 +265,13 @@ space{
   border: 2px solid #1db954;
   background-color: rgba(29, 185, 84, 0.1);
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .player {
+    width: 100%;
+  }
+}
